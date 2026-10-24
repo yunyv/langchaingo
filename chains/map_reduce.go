@@ -90,7 +90,7 @@ func (c MapReduceDocuments) getInputVariable(givenInputName string, chainInputVa
 }
 
 func (c MapReduceDocuments) maybeAddIntermediateSteps(result map[string]any, intermediateSteps []map[string]any) map[string]any { //nolint:lll
-	if !c.ReturnIntermediateSteps {
+	if !c.ReturnIntermediateSteps || result == nil {
 		return result
 	}
 
